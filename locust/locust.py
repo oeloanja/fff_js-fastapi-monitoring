@@ -28,7 +28,7 @@ feature_columns = {
 
 dataset = (
     pd.read_csv(
-        "Multi_3_train.csv",
+        "./Multi_3_train.csv",
         delimiter=",",
     )
     .rename(columns=feature_columns)
