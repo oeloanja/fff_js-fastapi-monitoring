@@ -2,27 +2,29 @@ from pydantic import BaseModel, Field
 
 feature_names = [
     
- 'loan_amnt'                   
- 'int_rate'                    
- 'installment'                 
- 'grade'                       
- 'emp_length'                  
- 'annual_inc'                                  
- 'dti'                         
- 'open_acc'                    
- 'pub_rec'                     
- 'revol_bal'                   
- 'revol_util'                  
- 'total_acc'                   
- 'collections_12_mths_ex_med' 
- 'mort_acc'                    
- 'emp'                         
- 'home_ownership'
- 'purpose'
- 'earliest_cr_line'
- 'issue_d'
+ "loan_amnt",                   
+ "int_rate",                    
+ "installment",                 
+ "grade",                       
+ "emp_length",                 
+ "annual_inc",                                  
+ "dti",                         
+ "open_acc",                    
+ "pub_rec",                     
+ "revol_bal",                   
+ "revol_util",                  
+ "total_acc",                   
+ "collections_12_mths_ex_med", 
+ "mort_acc",                    
+ "emp",                         
+ "home_ownership",
+ "purpose",
+ "earliest_cr_line",
+ "issue_d"
 ]
 
+
+## ge : greater than or equal / le : less than or equal
 
 class loan(BaseModel):
     loan_amnt : float = Field(
@@ -79,9 +81,9 @@ class loan(BaseModel):
     home_ownership : float = Field(
         ..., ge=0 , description = 'The borrower’s home ownership status (e.g., rent, own, mortgage).'
     )
-    purpose : float = Field(
-        ..., ge=0 , description = ' The purpose of the loan (e.g., debt consolidation, home improvement).'
-    )
+    #purpose : float = Field(
+    #    ..., ge=0 , description = ' The purpose of the loan (e.g., debt consolidation, home improvement).'
+    #)
     earliest_cr_line : float = Field(
         ..., ge=0 , description = 'The date when the borrower’s earliest credit line was opened.'
     )

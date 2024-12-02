@@ -4,6 +4,7 @@ from fastapi import FastAPI, Response
 from joblib import load
 from .schemas import loan, Rating, feature_names
 from .monitoring import instrumentator
+#from pydantic import BaseModel
 
 ROOT_DIR = Path(__file__).parent.parent
 
@@ -20,14 +21,17 @@ def root():
 
 # response_model : target
 # sample : Feature
-@app.post("/predict", response_model=Rating)
+@app.post("/predict" , Response_model= loan )
 def predict(response: Response, sample: loan):
     sample_dict = sample.dict()
     features = np.array([sample_dict[f] for f in feature_names]).reshape(1, -1)
     features_scaled = scaler.transform(features)
     prediction = model.predict(features_scaled)[0]
+  
     response.headers["X-model-score"] = str(prediction)
-    return Rating(quality=prediction)
+    return Rating(loan_status=prediction)
+
+
 
 
 @app.get("/healthcheck")
