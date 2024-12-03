@@ -26,7 +26,7 @@ feature_names = [
 
 ## ge : greater than or equal / le : less than or equal
 
-class loan(BaseModel):
+class Loan(BaseModel):
     loan_amnt : float = Field(
         ..., ge=0 , description = "The amount of money requested for the loan."
     )
@@ -48,9 +48,6 @@ class loan(BaseModel):
     )
     dti : float = Field(
         ..., ge=0 , description = "Debt-to-income ratio, calculated as the borrower’s monthly debt payments divided by their monthly income."
-    )
-    loan_amnt : float = Field(
-        ..., ge=0 , description = "why"
     )
     open_acc : float = Field(
         ..., ge=0 , description = "The number of open credit lines in the borrower’s credit history."
@@ -80,9 +77,9 @@ class loan(BaseModel):
     home_ownership : float = Field(
         ..., ge=0 , description = "The borrower’s home ownership status (e.g., rent, own, mortgage)."
     )
-    #purpose : float = Field(
-    #    ..., ge=0 , description = ' The purpose of the loan (e.g., debt consolidation, home improvement).'
-    #)
+    purpose : float = Field(
+        ..., ge=0 , description = ' The purpose of the loan (e.g., debt consolidation, home improvement).'
+    )
     earliest_cr_line : float = Field(
         ..., ge=0 , description = "The date when the borrower’s earliest credit line was opened."
     )
@@ -91,9 +88,12 @@ class loan(BaseModel):
     )
 
 class Rating(BaseModel):
-    loan_status: float = Field(
+    loan_status: int = Field(
         ...,
         ge = 0 ,
         le = 10,
         description = "The current status of the loan (e.g., fully paid, charged off)."
     )
+
+
+
