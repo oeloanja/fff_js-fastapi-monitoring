@@ -40,11 +40,3 @@ def predict(response: Response, sample: Loan):
 @app.get("/healthcheck")
 def healthcheck():
     return {"status": "ok"}
-
-
-@app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
-    return JSONResponse(
-        status_code=422,
-        content={"detail": exc.errors()},
-    )
