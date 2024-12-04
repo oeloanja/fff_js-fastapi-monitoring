@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
-
+import pandas as pd
 
 
 ROOT_DIR = Path(__file__).parent.parent
@@ -28,9 +28,10 @@ def root():
 # sample : Feature
 @app.post("/predict" , response_model= Rating)
 def predict(response: Response, sample: Loan):
-    sample_dict = sample.dict()
-    features = np.array([sample_dict[f] for f in feature_names]).reshape(1, -1)
-    features_scaled = scaler.transform(features)
+    sample_df = pd.DataFrame(sample)
+    #features = np.array([sample_df[f] for f in feature_names]).reshape(1, -1) 
+    #features_scaled = scaler.transform(features)
+    features_scaled = scaler.transform(sample_df)
     prediction = model.predict(features_scaled)[0]
   
     response.headers["X-model-score"] = str(prediction)
