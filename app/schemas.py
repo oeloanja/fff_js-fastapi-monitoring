@@ -91,7 +91,7 @@ class Rating(BaseModel):
     loan_status: int = Field(
         ...,
         ge = 0 ,
-        le = 10,
+        le = 2,
         description = "The current status of the loan (e.g., fully paid, charged off)."
     )
 
