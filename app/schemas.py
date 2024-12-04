@@ -18,7 +18,7 @@ feature_names = [
  "mort_acc",                    
  "emp",                         
  "home_ownership",
- "purpose",
+# "purpose",
  "earliest_cr_line",
  "issue_d"
 ]
@@ -77,9 +77,9 @@ class Loan(BaseModel):
     home_ownership : float = Field(
         ..., ge=0 , description = "The borrower’s home ownership status (e.g., rent, own, mortgage)."
     )
-    purpose : float = Field(
-        ..., ge=0 , description = ' The purpose of the loan (e.g., debt consolidation, home improvement).'
-    )
+   # purpose : float = Field(
+   #     ..., ge=0 , description = ' The purpose of the loan (e.g., debt consolidation, home improvement).'
+   # )
     earliest_cr_line : float = Field(
         ..., ge=0 , description = "The date when the borrower’s earliest credit line was opened."
     )
