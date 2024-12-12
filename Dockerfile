@@ -1,12 +1,14 @@
-FROM python:3.7
+FROM python:3.11-bookworm
 
-COPY requirements.txt requirements.txt 
+WORKDIR /fastapi-monitoring
+
+COPY requirements.txt /fastapi-monitoring
 
 RUN pip install -r requirements.txt
 
-WORKDIR /js-fastapi-monitoring
+WORKDIR /fastapi-monitoring
 
-COPY . /js-fastapi-monitoring
+COPY . /fastapi-monitoring
 
 EXPOSE 80
 

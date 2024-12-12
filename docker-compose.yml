@@ -1,26 +1,26 @@
-name: fff_js-monitoring
+name: monitoring
 
 services:
   web:
     build: .
-    container_name: fff_js-fastapi-monitoring
+    container_name: fastapi-monitoring
     volumes:
       - .:/code
     ports:
       - "5000:80"
-    environment:
-      - ENABLE_METRICS=true
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    command:
-      - '--web.listen-address=0.0.0.0:9090'
-      - '--config.file=/etc/prometheus/prometheus.yml'
-    ports:
-      - 9090:9090
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-  grafana:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
+  #   environment:
+  #     - ENABLE_METRICS=true
+  # prometheus:
+  #   image: prom/prometheus
+  #   container_name: prometheus
+  #   command:
+  #     - '--web.listen-address=0.0.0.0:9090'
+  #     - '--config.file=/etc/prometheus/prometheus.yml'
+  #   ports:
+  #     - 9090:9090
+  #   volumes:
+  #     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  # grafana:
+  #   image: grafana/grafana
+  #   ports:
+  #     - "3000:3000"
