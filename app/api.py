@@ -13,14 +13,12 @@ import pickle
 ROOT_DIR = Path(__file__).parent.parent
 
 app = FastAPI()
-with open('./artifacts/model2.pkl', 'rb') as f:
-    model = pickle.load(f)
+model = load(ROOT_DIR / "artifacts/model.joblib")
+
 
 @app.get("/")
 def root():
     return "loan status Ratings"
-
-
 
 
 @app.post("/predict", response_model= Rating)

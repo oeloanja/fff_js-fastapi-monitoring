@@ -6,7 +6,6 @@ from joblib import dump
 from sklearn import preprocessing
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import recall_score
-#from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 
 
@@ -14,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 def prepare_dataset(test_size=0.2, random_seed=1):
     dataset = pd.read_csv(
-        "./Multi_3_train.csv",
+        "./data_fin.csv",
         delimiter=",",
     )
     dataset = dataset.rename(columns=lambda x: x.lower().replace(" ", "_"))
@@ -29,10 +28,10 @@ def train():
     test_df = dataset["test"]
 
    
-    y_train = train_df["loan_status"]
-    X_train = train_df.drop("loan_status", axis=1)
-    y_test = test_df["loan_status"]
-    X_test = test_df.drop("loan_status", axis=1)
+    y_train = train_df["target"]
+    X_train = train_df.drop("target", axis=1)
+    y_test = test_df["target"]
+    X_test = test_df.drop("target", axis=1)
 
     logger.info("Training model...")
     scaler = preprocessing.StandardScaler().fit(X_train)
@@ -48,7 +47,7 @@ def train():
     logger.info("Saving artifacts...")
     Path("artifacts").mkdir(exist_ok=True)
     dump(model, "artifacts/model.joblib")
-    dump(scaler, "artifacts/scaler.joblib")
+  
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
