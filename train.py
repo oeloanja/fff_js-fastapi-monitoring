@@ -34,12 +34,15 @@ def train():
     X_test = test_df.drop("target", axis=1)
 
     logger.info("Training model...")
-    scaler = preprocessing.StandardScaler().fit(X_train)
-    X_train = scaler.transform(X_train)
-    X_test = scaler.transform(X_test)
-    model = RandomForestClassifier(n_estimators= 100, max_depth=5, random_state = 0).fit(X_train, y_train)
+    #scaler = preprocessing.StandardScaler().fit(X_train)
+    #X_train = scaler.transform(X_train)
+    #X_test = scaler.transform(X_test)
+    
+    model = RandomForestClassifier(n_estimators= 100, max_depth=5, min_samples_split= 3,random_state = 0).fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
+
+# ____________________________________________________________
 
     error = recall_score(y_test, y_pred, average='macro')
     logger.info(f"Test recall_score: {error}")

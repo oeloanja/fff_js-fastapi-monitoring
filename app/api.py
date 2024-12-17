@@ -1,6 +1,6 @@
 from pathlib import Path
 import numpy as np
-from fastapi import FastAPI, Response
+from fastapi import FastAPI,Response
 from joblib import load
 from .schemas import Loan, Rating, feature_names
 from pydantic import BaseModel
@@ -32,8 +32,6 @@ def predict(response: Response, sample: Loan):
     
     response.headers["X-model-score"] = str(prediction)   
     return {"target": prediction}
-
-
 
 @app.get("/healthcheck")
 def healthcheck():

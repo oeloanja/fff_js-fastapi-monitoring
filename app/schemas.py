@@ -17,8 +17,8 @@ feature_names = [
     "cr_line_period",
     "issue_d_period",
     "emplength",
-    "loan_purpose"
-
+    "loan_purpose",
+    
 ]
 
 
@@ -69,7 +69,6 @@ class Loan(BaseModel):
     emplength : int = Field(
         ...,  description = "The length of the borrower’s employment in years."
     )
-
     loan_purpose : int = Field(
         ..., description= "loan purpose."
     )
@@ -78,7 +77,7 @@ class Loan(BaseModel):
 class Rating(BaseModel):
     target: int = Field(
         ...,
-        ge = 0 ,
+        ge = 0,
         le = 2,
         description = "The current status of the loan (e.g., fully paid, charged off)."
     )
