@@ -13,7 +13,7 @@ import pickle
 ROOT_DIR = Path(__file__).parent.parent
 
 app = FastAPI()
-model = load(ROOT_DIR / "artifacts/model.joblib")
+model = load(ROOT_DIR / "artifacts/best_model.joblib")
 
 
 @app.get("/")

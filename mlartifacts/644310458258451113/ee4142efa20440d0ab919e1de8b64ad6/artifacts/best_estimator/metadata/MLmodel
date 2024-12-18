@@ -1,0 +1,35 @@
+artifact_path: best_estimator
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.12
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.2
+mlflow_version: 2.14.0rc0
+model_size_bytes: 155986
+model_uuid: e82988c4f21f4d8788019499ee1789ee
+run_id: ee4142efa20440d0ab919e1de8b64ad6
+signature:
+  inputs: '[{"type": "double", "name": "int_rate", "required": true}, {"type": "double",
+    "name": "installment", "required": true}, {"type": "double", "name": "dti", "required":
+    true}, {"type": "double", "name": "pub_rec", "required": true}, {"type": "double",
+    "name": "revol_bal", "required": true}, {"type": "double", "name": "revol_util",
+    "required": true}, {"type": "double", "name": "open_acc", "required": true}, {"type":
+    "double", "name": "total_acc", "required": true}, {"type": "double", "name": "mort_acc",
+    "required": true}, {"type": "double", "name": "collections_12_mths_ex_med", "required":
+    true}, {"type": "double", "name": "annual_inc", "required": true}, {"type": "double",
+    "name": "loan_amnt", "required": true}, {"type": "long", "name": "cr_line_period",
+    "required": true}, {"type": "long", "name": "issue_d_period", "required": true},
+    {"type": "long", "name": "emplength", "required": true}, {"type": "long", "name":
+    "loan_purpose", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2024-12-18 07:28:48.582763'

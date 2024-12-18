@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/644310458258451113/37c17b14df3a4755bfeab8ed03b0925b/artifacts
+end_time: 1734506929837
+entry_point_name: ''
+experiment_id: '644310458258451113'
+lifecycle_stage: active
+run_id: 37c17b14df3a4755bfeab8ed03b0925b
+run_name: worried-mink-186
+run_uuid: 37c17b14df3a4755bfeab8ed03b0925b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734506849519
+status: 3
+tags: []
+user_id: ubuntu

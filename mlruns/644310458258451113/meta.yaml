@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/644310458258451113
+creation_time: 1734506849405
+experiment_id: '644310458258451113'
+last_update_time: 1734506849405
+lifecycle_stage: active
+name: gridsearch_randomforest_experiment

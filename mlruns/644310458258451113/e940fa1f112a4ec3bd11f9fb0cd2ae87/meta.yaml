@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/644310458258451113/e940fa1f112a4ec3bd11f9fb0cd2ae87/artifacts
+end_time: 1734506929837
+entry_point_name: ''
+experiment_id: '644310458258451113'
+lifecycle_stage: active
+run_id: e940fa1f112a4ec3bd11f9fb0cd2ae87
+run_name: gaudy-jay-301
+run_uuid: e940fa1f112a4ec3bd11f9fb0cd2ae87
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734506849519
+status: 3
+tags: []
+user_id: ubuntu

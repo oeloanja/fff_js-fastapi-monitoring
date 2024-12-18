@@ -1,0 +1,18 @@
+digest: 1c914eda
+name: dataset
+profile: '{"num_rows": 28166, "num_elements": 450656}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "int_rate", "required": true},
+  {"type": "double", "name": "installment", "required": true}, {"type": "double",
+  "name": "dti", "required": true}, {"type": "double", "name": "pub_rec", "required":
+  true}, {"type": "double", "name": "revol_bal", "required": true}, {"type": "double",
+  "name": "revol_util", "required": true}, {"type": "double", "name": "open_acc",
+  "required": true}, {"type": "double", "name": "total_acc", "required": true}, {"type":
+  "double", "name": "mort_acc", "required": true}, {"type": "double", "name": "collections_12_mths_ex_med",
+  "required": true}, {"type": "double", "name": "annual_inc", "required": true}, {"type":
+  "double", "name": "loan_amnt", "required": true}, {"type": "long", "name": "cr_line_period",
+  "required": true}, {"type": "long", "name": "issue_d_period", "required": true},
+  {"type": "long", "name": "emplength", "required": true}, {"type": "long", "name":
+  "loan_purpose", "required": true}]}'
+source: '{"tags": {"mlflow.user": "ubuntu", "mlflow.source.name": "train.py", "mlflow.source.type":
+  "LOCAL", "mlflow.source.git.commit": "9d4ad8819ccfec2a6ae11630ebced777c6888c58"}}'
+source_type: code
